@@ -1,0 +1,266 @@
+\section{Architecture \& Implementation}
+\label{sec:architecture}
+
+CloudFlow is a modular system composed of several asynchronously connected
+components.  It provides a cloud-wide enforcement mechanism, assisting in
+information flow control via active policy deployment and on demand VM
+relocation.  CloudFlow only requires VM images and policies as input (Figure
+\ref{cloudflow:figure:highlevelarch}).  Policies are propagated to nodes
+on-demand at runtime. 
+ 
+During execution, each VM has a set of application-specific labels
+associated with its running tasks.  The appearance or disappearance of a
+guest-hosted application with a given runtime label may trigger a
+policy-defined action.  This action may be null or may result in the
+relocation or halting of a subset of VMs.  The ultimate purpose is reactive
+defense against any potentially unallowed information flows, as defined by the currently deployed policies.  
+
+CloudFlow can naturally enforce different types of information flow policies
+including Chinese Wall and Bell-Lapadula MLS models.  For example in the
+case MLS policies, the runtime labels can be thought of as MLS
+classification labels and CloudFlow as a runtime MLS enforcement mechanism.
+
+\subsection{Introspection Module}
+% 
+CloudFlow deploys VM introspection to extract runtime labels
+from key guest kernel data structures.  CloudFlow enforces information flow
+in realtime which renders existing introspection libraries for KVM-QEMU
+unusable due to their high latency and low speeds.  For these reasons,
+CloudFlow undertakes VM introspection by hooking into existing KVM-QEMU
+internals and significantly reducing overheads due to unnecessary levels of
+indirection added by external libraries.
+
+Introspection is performed by a specialized introspection thread, one instance of which is placed near each monitored VM. 
+The introspection thread runs as part of the KVM-QEMU hypervisor code base
+\cite{QEMU} and exists inside the KVM-QEMU process.  It inserts itself inside the scheduling chain of hardware I/O threads
+(within KVM-QEMU) that manage hardware I/O virtualization for the hypervisor
+(Figure \ref{clowdflow:figure:introspectionmodule}).  This allows the use of
+KVM-QEMU's internal mechanisms for quick access to guest memory.  The
+introspection thread synchronizes with the other threads using existing
+locking mechanisms.  Yet since KVM-QEMU follows a hybrid approach that allows
+both multi-threading and event based programming, the introspection
+thread is also aware of internal scheduling demands of KVM-QEMU and yields
+the I/O lock often enough to allow graceful handling of KVM-QEMU events.
+
+With a hook into the KVM-QEMU's internal guest memory reading interface and
+a number of synchronization issues resolved, the introspection thread feeds
+from two key guest kernel data structures: the task list and the SELinux
+hash table containing context information for all running tasks.  The thread
+extracts this information periodically, monitoring for changes to the running
+task list and associated SELinux context information.  It
+thread receives a list of target labels of interest (from the policy
+infrastructure) and continuously searches for them inside the target guest. 
+Once a related change happens inside the guest kernel, the information is 
+propagated from the guest to the policy checking modules within a few
+milliseconds\footnote{This is a vast improvement over latency caused
+by using existing introspection libraries as we show in Section
+\ref{sec:evaluation}.} (which constitutes a vulnerability window discussed
+later). 
+
+Also, for extensibility and re-usability, the introspection thread is
+segregated into two separate components.  The first component handles the
+interfacing with KVM-QEMU internals, while the second component provides
+the SELinux-aware data extraction mechanisms.
+
+Since only the second component is entangled with CloudFlow particulars, the
+first component in fact constitutes a new fast introspection interface for
+KVM-QEMU which will be made public as a QEMU patch.
+
+\subsection{Policy Language Model}
+
+As previously mentioned, CloudFlow follows a policy-centric approach. Its
+policy language provides a way to delineate information flow control
+decisions in the form of high level policy constructs a subset of which is shown in Figure \ref{figure:policystructure}.
+
+\begin{figure}[t]
+\vspace{-5pt}
+\begin{Verbatim}[frame=single]
+<policy-list> = <policy> | <policy> <policy-list>
+
+<policy> =  <p> if <label> in <locality> 
+                then <action> </p>
+
+<label> = {Set of target runtime labels}
+
+<locality> = <co-resident> | <self>
+
+<action> = <migrate> | <halt> | resume
+\end{Verbatim}
+\vspace{-20pt}
+\caption{Subset of CloudFlow Policy Language}
+\label{figure:policystructure}
+\end{figure}
+%add a footnote Obviously arbitrary turing-complete language could be deployed here.
+For simplicity and efficiency purposes we have decided to keep the CloudFLow language as simple as possible while still serving as a sound illustrative example. Currently the policy language has a simple grammatical model that expects a label, the
+locality of the target virtual machine and an appropriate action to perform
+in case of a positive match for the provided label.  Consider for example
+the case when VMs for users Alice and Bob need to be kept physically isolated
+throughout the cloud infrastructure -- the corresponding policy is
+illustrated in Figure \ref{cloudflow:figure:examplepolicy}. 
+
+Presently, the set of labels is limited to only include
+SELinux \cite{SeStat} types.  In this example, processes run by Alice are
+marked as ``Alice'' (as well with a number of other labels, including the process
+name) at runtime by the SELinux subsystem on each guest.  We felt there is value in
+coupling with guest SELinux ecosystems, allow for a wide range of complex
+policies, and not require changes to existing guest logic. We note that the set of labels can be changed arbitrarily along with the underlying OS.
+
+Further, we have picked XML as the format of choice for the actual
+implementation of the policy files.  The policy language itself
+is agnostic to the format used in the implementation.  In fact, early versions of CloudFlow were using key-value pairs to implement the policy language.  XML has a flexible structure
+that allows quick extensions with minimal effort. As CloudFlow policies
+and associated scenarios mature we envision a set of graphical tools to
+manipulate these cloud-wide policies. 
+
+\begin{figure}[h]
+\vspace{-5pt}
+\begin{Verbatim}[frame=single]
+<p> if <Alice> in <co-resident>
+    then <migrate> </p>
+\end{Verbatim}
+\vspace{-20pt}
+\caption{Example policy
+\label{cloudflow:figure:examplepolicy}}
+\end{figure}
+
+
+\subsection{Management Module}
+
+The CloudFlow management module is the component that provides an entry
+point to the cloud administrator.  An administrator can input a VM image
+along with a list of security policies written by a policy designer.  In addition to the usual management tasks,
+such as deploying and tracking the VMs, the CloudFlow management module does all the
+house-keeping such as storing and propagating
+policies.  The module is integrated seamlessly in the OpenStack
+platform \cite{OpenStack} and features additional code to handle call-backs from the
+policy module as well user interface events.
+
+\subsection{Policy Module (Daemon, Master)}
+% 
+The CloudFlow management module propagates the provided policies to the
+actual policy enforcement infrastructure.  CloudFlow runs a cloud-wide
+policy master module (PolicyM) and a per-node instance of the policy daemon
+(PolicyD).  PolicyM acts as a master that controls all running instances of
+PolicyD and keeps track of conflicts across physical hosts.  Meanwhile,
+PolicyD has the job of maintaining policy lists for a given physical node as
+well as interfacing with the introspection module for each VM.
+
+\begin{figure}[h]
+\begin{center}
+\includegraphics[scale=0.3]{figures/moduledesign2.eps}
+%\vspace{30pt}
+\caption{\small 
+%
+CloudFlow follows a completely modular design. VM management, policy
+enforcement and VM introspection are all performed by dedicated modules.
+%
+\label{cloudflow:figure:moduledesign}}
+\end{center}
+\end{figure}
+
+
+Whenever a new policy is passed to PolicyD by the management module at VM
+deployment time, it parses target labels in the policy and passes them on to
+the appropriate introspection module.  It also notifies PolicyM that a new
+VM has become active in the cloud.  Similarly in the case of VM deletion,
+PolicyM is informed by PolicyD of the change.  Additionally, whenever a
+policy label ``matches'' a runtime label inside a guest VM, PolicyD gets
+notified by the corresponding introspection module, in effect ``triggering''
+a policy.  PolicyD looks up the required action as specified by this policy.  In case of
+a ``halt'' action, PolicyD simply issues a halt call-back to the management
+module.  In case of a ``migration'' it issues a request to PolicyM to search for
+a potential migration target.
+
+PolicyM maintains high level state for the entire cloud and in case of a
+migration request from PolicyD, it scouts for a target node that does not
+introduce additional conflicts.  To this end PolicyM executes a
+reconnaissance phase to find the potential target.  It queries runtime
+labels for all deployed VMs from the associated PolicyDs and crosschecks
+them with deployed policies.  This allows for the selection of a migration
+target that (at least in the immediate future) will not cause further
+conflicts.  PolicyM then suggests this host to PolicyD, which issues the
+migration request back to the management module.  The CloudFlow PolicyD and
+PolicyM are written from scratch in Python and Java respectively.
+
+
+\subsection{Illustrative Scenario}
+%make sure illustrative diagram is here
+Here we outline an illustrative scenario (Figure \ref{cloudflow:figure:illustrativescenario}). 
+Consider a law firm with two clients A and B, handled by employees Alice and
+Bob respectively.  State and federal laws prevent Alice and Bob from sharing
+any information due to the possibility of a conflict of interest arising. 
+In this scenario, CloudFlow will prevent information leakage as follows:
+
+
+\begin{figure*}[t]
+\begin{center}
+\includegraphics[scale=0.70]{figures/illustrativepicture.eps}
+%\vspace{30pt}
+\caption{\small 
+%
+CloudFlow performs dynamic policy-triggered VM relocation based on input policies. 
+An example policy is one that disallows two users (Alice and Bob) from being co-resident 
+on the same physical node based on \textit{runtime labels}.
+%
+\label{cloudflow:figure:illustrativescenario}}
+\end{center}
+\end{figure*}
+
+
+\begin{itemize}
+
+\item A policy is created outlining the fact that workloads run by users
+Alice and Bob should not be co-resident.  The simple policy in Figure
+\ref{cloudflow:figure:examplepolicy} can be used as an example.  The policy
+will be described for Alice and Bob and propagated automatically along with
+both their VMs at time of deployment.
+
+\item Sometime in the future Alice is working on client A's data and needs
+to run her workload.
+
+\item Bob uses the same cloud as Alice and it just so happens that the cloud
+scheduler locates their VMs on the same physical machine {\em before they both
+start their respective workloads}.
+
+\item After some time Alice's VM boots up and launches the desired
+Alice-labeled workload. 
+%
+% All work-related processes that are run by Alice will automatically contain
+% her user-name as a label due to the SELinux subsystem.  This causes the
+%
+The introspection thread assigned to this VM will immediately raise a flag
+as soon as it notices the Alice label on the applications.  This event is 
+sent back to the PolicyD running on the current physical node.  PolicyD
+looks at the policies that have been specified for the VM that issued the
+call-back.  Although PolicyD finds one policy that specifies Alice, it knows
+that currently there are no other VMs on the same machine running workloads
+from Bob hence no action is taken.
+
+\item After some more time passes, Bob's VM boots up and launches its
+Bob-labeled workload.  At this point the two particular introspection
+threads (for both Alice and Bob's VMs respectively) report back to PolicyD
+having seen the desired runtime labels (Alice and Bob).
+
+\item PolicyD now works out that an administrator has specified a policy
+that prohibits the current cloud state.  Alice's VM is frozen to prevent 
+any security breach.
+
+\item The action specified by the policy i.e., migration, is then passed back
+to the PolicyM module by PolicyD along with the id for Alice's VM.
+
+\item PolicyM now begins a reconnaissance phase to locate a potential target
+to relocate Alice's VM.  In this phase PolicyM queries a list of runtime
+labels from all potential hosts and as soon as it finds a target host that
+will not cause a policy conflict with Alice's VM, it returns the host name
+to the PolicyD that issued the migration request.
+
+\item PolicyD now has a conflict-free migration target and issues a
+migration call-back to the management module.
+
+\item The OpenStack module issues a migrate action, as it normally would for
+load balancing, and migrates Alice's VM to the provided migration target,
+where the VM resumes.
+
+
+\end{itemize}
+

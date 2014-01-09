@@ -1,0 +1,48 @@
+\section{Discussion}
+
+\noindent 
+{\bf Information Flow Invariants.~}
+%
+The set of cloud-wide guest SELinux labels form a type system that allows runtime
+information flow control. 
+
+Yet we need to caution that any reactive system cannot
+be provably secure. 
+
+CloudFlow enacts a best-effort approach that aims to minimize the
+vulnerability window during which an attack can be mounted against a target
+VM.  In practice however, we observe that the window of vulnerability is so
+small (<5ms, Section \ref{sec:evaluation}) that it easily defeats any
+existing and forseeable sidechannel attacks which are usually low-bandwidth
+and require comparatively ample time to deploy \cite{SideCrypto,SideCloud,PrimeProbe12}
+(>hours).
+
+\noindent
+{\bf Users \& Groups.~}
+%
+CloudFlow allows the straightforward definition and enforcement of user- and
+group/role-based policies. Roles can be associated with underlying SELinux
+labels which can then be used in the policy definitions. 
+
+\noindent
+{\bf Centralizing Policy Management.~}
+%
+Currently CloudFlow is using a database attached to OpenStack as Policy
+Store.  Whenever a particular user launches a VM, it needs to also attach
+all policies pertaining to it to be propagated along with its VM launch
+request.  The target VM host thus only needs to keep track of policies that
+are locally relevant.  This significantly reduces the complexity of policy
+checking required by the local PolicyD instance and reduces latency for
+migration decisions.
+
+The process can be further streamlined by ensuring a default automatic
+OpenStack-driven policy to VM mapping and propagation that can determine
+applicable policies from the user's session credentials. Moreover, the
+existence of a set of cloud-wide policy repository may be desirable from
+which users may chose individual subsets of policies of interest. 
+
+Finally, the policy management system would benefit from a (partial)
+ordering of runtime labels.  This would enable streamlined conflict
+resolution, e.g., a policy may specify that the ``lower'' labeled VM
+should be migrated in the case of triggered inter-VM policy conflicts.
+

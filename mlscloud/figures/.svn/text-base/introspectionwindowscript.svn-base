@@ -1,0 +1,10 @@
+set terminal postscript eps color enhanced "Times-Roman" 28
+# set term post eps
+set output "introspectionwindow.eps"
+set datafile separator ','
+set logscale y
+set xrange [0:4]
+set boxwidth 0.5
+set ylabel "Time(s) (Logscale)"
+set xlabel "Introspection Technique"
+plot 'introspectionwindow.csv' using 2:xtic(1) with boxes notitle

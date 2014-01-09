@@ -1,0 +1,13 @@
+set terminal postscript eps color enhanced "Times-Roman" 28
+#set term post eps
+set output "guestslowdown.eps"
+set datafile separator ','
+set xrange [0:6]
+set yrange [0.6:1.5]
+set xtic rotate by -20
+set ylabel "Normalized time to run"
+set xlabel "Benchmarks"
+set boxwidth 0.15
+plot 'guestslowdown.csv' using ($0-0.25):2:3:xtic(1) with boxerrorbars title "Baseline",\
+     '' using ($0+0.08):4:5 with boxerrorbars title "With introspection"
+

@@ -1,0 +1,129 @@
+\relax 
+\citation{SideCrypto,SideCloud,LastSummer,ScriptlessAttacks,PrimeProbe12}
+\citation{Enron}
+\citation{Sox}
+\citation{HiStar}
+\citation{SeStat}
+\citation{HomeAlone}
+\citation{OpenStack}
+\citation{QEMU}
+\citation{libvirt}
+\citation{libvmi}
+\citation{OpenStack}
+\@writefile{toc}{\contentsline {section}{\numberline {I}Introduction}{1}}
+\newlabel{sec:introduction}{{I}{1}}
+\citation{Enron}
+\citation{Sox}
+\citation{HIPAA}
+\citation{GLB}
+\citation{FISMA}
+\citation{SEC17cfr241}
+\citation{EGA}
+\citation{Pat01}
+\citation{BellLapadula}
+\citation{CloudEncPolicy10,NetODESSA,CloudProfit12,CloudPower12,AllocationPolicy10}
+\citation{Mushi}
+\citation{SideCloud,SideCrypto}
+\citation{SideCloud,SideCrypto,LastSummer,ScriptlessAttacks}
+\citation{SideCloud,SideCrypto,PrimeProbe12}
+\citation{Terra}
+\citation{RemoteAttestation,OutOfBox,OutOfBoxMalware,AntFarm,VMIObserve,TamperResist,libvmi}
+\citation{CoPilot}
+\citation{Ether}
+\citation{chen01virtual,SemanticGap}
+\citation{DKSM}
+\@writefile{toc}{\contentsline {section}{\numberline {II}Background and Model}{2}}
+\newlabel{sec:model}{{II}{2}}
+\@writefile{toc}{\contentsline {paragraph}{\numberline {\unhbox \voidb@x \hbox {II-}0a}\bf  Regulatory compliance \& Information flow control}{2}}
+\@writefile{toc}{\contentsline {paragraph}{\numberline {\unhbox \voidb@x \hbox {II-}0b}\bf  MLS and Chinese Wall policies}{2}}
+\@writefile{toc}{\contentsline {paragraph}{\numberline {\unhbox \voidb@x \hbox {II-}0c}\bf  Side Channels}{2}}
+\newlabel{cloudflow:figure:memh}{{\unhbox \voidb@x \hbox {II-}0c}{2}}
+\@writefile{toc}{\contentsline {paragraph}{\numberline {\unhbox \voidb@x \hbox {II-}0d}\bf  VM Introspection}{2}}
+\citation{Virtuoso,ProcessImplanting}
+\citation{OpenStack}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces \relax \fontsize  {9}{10pt}\selectfont  Administrators from different departments provide CloudFlow with VM images and desired security policies. CloudFlow (CF) deploys the images to the cloud and propagates CF policies automatically to relevant nodes. The policies are then used to dynamically deduce CF labels for VMs. Policies are enforced in real-time using VM introspection and call-backs to the management module(e.g. migration requests). The figure shows a migration in progress. }}{3}}
+\newlabel{cloudflow:figure:highlevelarch}{{1}{3}}
+\@writefile{toc}{\contentsline {paragraph}{\numberline {\unhbox \voidb@x \hbox {II-}0e}\bf  Clouds}{3}}
+\@writefile{toc}{\contentsline {paragraph}{\numberline {\unhbox \voidb@x \hbox {II-}0f}\bf  Deployment Model}{3}}
+\@writefile{toc}{\contentsline {paragraph}{\numberline {\unhbox \voidb@x \hbox {II-}0g}\bf  Threat Model \& Assumptions}{3}}
+\citation{DKSM}
+\citation{QEMU}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces \relax \fontsize  {9}{10pt}\selectfont  CloudFlow deploys a fast introspection thread that uses KVM-QEMU internals directly to extract key kernel structures and infer information about tasks running inside the guest OS. }}{4}}
+\newlabel{clowdflow:figure:introspectionmodule}{{2}{4}}
+\@writefile{toc}{\contentsline {section}{\numberline {III}Architecture \& Implementation}{4}}
+\newlabel{sec:architecture}{{III}{4}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {III-A}}Introspection Module}{4}}
+\citation{SeStat}
+\citation{OpenStack}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Subset of CloudFlow Policy Language}}{5}}
+\newlabel{figure:policystructure}{{3}{5}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {III-B}}Policy Language Model}{5}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Example policy }}{5}}
+\newlabel{cloudflow:figure:examplepolicy}{{4}{5}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {III-C}}Management Module}{5}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {III-D}}Policy Module (Daemon, Master)}{5}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces \relax \fontsize  {9}{10pt}\selectfont  CloudFlow performs dynamic policy-triggered VM relocation based on input policies. An example policy is one that disallows two users (Alice and Bob) from being co-resident on the same physical node based on \textit  {runtime labels}. }}{6}}
+\newlabel{cloudflow:figure:illustrativescenario}{{6}{6}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces \relax \fontsize  {9}{10pt}\selectfont  CloudFlow follows a completely modular design. VM management, policy enforcement and VM introspection are all performed by dedicated modules. }}{6}}
+\newlabel{cloudflow:figure:moduledesign}{{5}{6}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {III-E}}Illustrative Scenario}{6}}
+\citation{SideCrypto,SideCloud,PrimeProbe12}
+\@writefile{toc}{\contentsline {section}{\numberline {IV}Discussion}{7}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces \relax \fontsize  {9}{10pt}\selectfont  CloudFlow features a low impact introspection design that allows it to perform significantly faster than existing introspection libraries. The shorter the introspection cycle, the smaller the window of vulnerability during which a VM can be attacked. }}{7}}
+\newlabel{cloudflow:figure:introspectionwindow}{{7}{7}}
+\@writefile{toc}{\contentsline {section}{\numberline {V}Evaluation}{7}}
+\newlabel{sec:evaluation}{{V}{7}}
+\citation{Phoronix}
+\citation{libvirt}
+\citation{libvmi}
+\citation{QEMU}
+\citation{OpenStack}
+\bibstyle{plain}
+\bibdata{bib/refs}
+\bibcite{BellLapadula}{1}
+\bibcite{Enron}{2}
+\bibcite{FISMA}{3}
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces \relax \fontsize  {9}{10pt}\selectfont  CloudFlow has a minimal overhead, below 2\% slowdown in guest workloads. Performance slowdown caused by CloudFlow remains well within the normal variation shown by typical workloads, represented here by the error bars. }}{8}}
+\newlabel{cloudflow:figure:guestslowdown}{{8}{8}}
+\@writefile{toc}{\contentsline {section}{\numberline {VI}Conclusion and Future Work}{8}}
+\newlabel{sec:conclusion}{{VI}{8}}
+\@writefile{toc}{\contentsline {section}{References}{8}}
+\bibcite{HIPAA}{4}
+\bibcite{GLB}{5}
+\bibcite{OpenStack}{6}
+\bibcite{Phoronix}{7}
+\bibcite{Sox}{8}
+\bibcite{EGA}{9}
+\bibcite{Pat01}{10}
+\bibcite{SEC17cfr241}{11}
+\bibcite{SeStat}{12}
+\bibcite{DKSM}{13}
+\bibcite{RemoteAttestation}{14}
+\bibcite{QEMU}{15}
+\bibcite{NetODESSA}{16}
+\bibcite{chen01virtual}{17}
+\bibcite{SemanticGap}{18}
+\bibcite{CloudPower12}{19}
+\bibcite{CloudEncPolicy10}{20}
+\bibcite{Ether}{21}
+\bibcite{Virtuoso}{22}
+\bibcite{Terra}{23}
+\bibcite{ProcessImplanting}{24}
+\bibcite{ScriptlessAttacks}{25}
+\bibcite{OutOfBox}{26}
+\bibcite{OutOfBoxMalware}{27}
+\bibcite{AntFarm}{28}
+\bibcite{libvirt}{29}
+\bibcite{libvmi}{30}
+\bibcite{VMIObserve}{31}
+\bibcite{CloudProfit12}{32}
+\bibcite{CoPilot}{33}
+\bibcite{SideCloud}{34}
+\bibcite{TamperResist}{35}
+\bibcite{AllocationPolicy10}{36}
+\bibcite{SideCrypto}{37}
+\bibcite{LastSummer}{38}
+\bibcite{HiStar}{39}
+\bibcite{Mushi}{40}
+\bibcite{HomeAlone}{41}
+\bibcite{PrimeProbe12}{42}

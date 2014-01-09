@@ -1,0 +1,95 @@
+\vspace{5pt}
+
+\section{Evaluation}
+\label{sec:evaluation}
+
+We now explore two different performance aspects of CloudFlow. 
+The first aspect is the ability to minimize the window of time during which
+a particular VM remains vulnerable to side channel attacks, after it has
+started a security-critical workload.  CloudFlow provides a best-effort
+solution and only a small window of vulnerability exists where the victim
+can be targeted.  The aim of the experiments is to find out exactly how
+small this window is.  The second aspect is the performance slowdown
+experienced within the guest due to constant introspection.  Our
+introspection technique is polling based and causes a constant but minimal
+overhead.  Finally, VMs may undergo dynamic migration for policy conflict
+resolution and resultant latency causes the guest to perform
+slower.  We minimize the impact of this overhead by scouting out conflict-free migration targets.
+
+\noindent
+{\bf Specs.~} 
+% 
+2.90 GHz Intel i7-3520M nodes with 4GB memory running 64-bit Ubuntu 12.04.1
+LTS.  The VMs are running 64-bit Fedora 16 with 2GB of memory. The benchmark
+suite of choice was the Phoronix Test Suite \cite{Phoronix}.
+
+\noindent
+{\bf Vulnerability Window.~}
+%
+Since CloudFlow is reactive in nature, a major aim is to minimize the window of
+vulnerability during which an attack can be mounted against a target VM. 
+The size of this window is precisely the time it takes from the moment a
+security critical workload starts to run to the moment an appropriate policy
+enforcement is executed.  Whenever a runtime label matches a policy
+that needs to be enforced CloudFlow freezes the VM. As CloudFlow performs continuous introspection, the vulnerability window
+is exactly the wall-clock time it takes to do a complete introspection cycle over the
+required kernel data structures.
+
+In an initial version of CloudFlow we started using libvirt \cite{libvirt} 
+and libVMI \cite{libvmi} as the libraries of choice for KVM-QEMU
+introspection.  It became quickly apparent that these libraries are not
+designed for low-latency response and the combination is unusable for
+meaningful real-time introspection. 
+%
+% The reason for this turned out to be unnecessary socket communication used for
+% IPC within the library and long delays caused by the KVM-QEMU messaging
+% systems used to communicate with KVM-QEMU.  
+%
+Instead, we wrote our own custom fast introspection interface for KVM-QEMU
+which sheds all unnecessary libvmi/libvirt overheads and runs within
+KVM-QEMU as a thread that can use KVM-QEMU internals directly to read guest
+memory.  This allowed us to {\em perform orders of magnitude faster that
+existing techniques}.  As shown in Figure
+\ref{cloudflow:figure:introspectionwindow}, CloudFlow only takes around
+4.7ms wall clock time (less than 2\% of which is CPU time) to perform one
+complete pass over all the desired kernel structures.  This figure was
+achieved for >50 guest processes running -- the behavior does not vary
+significantly with increasing number of processes.
+
+
+
+\noindent
+{\bf Performance.~}
+%
+CloudFlow is broken down into independently functioning components that
+communicate with each other asynchronously.  Out of all the components, the
+most computationally intensive module is the introspection module.  The
+introspection runs as a thread inside of KVM-QEMU and as a result affects
+the runtime performance of the monitored guests.  Figure
+\ref{cloudflow:figure:guestslowdown} shows the runtime performance of the
+guest operating system with both introspection on and off (lower is better). 
+
+The slowdown caused by CloudFlow introspection is upper bound around 1.7\%
+above the baseline performance measured with introspection turned off. 
+CloudFlow performs well within the original error bounds of the baseline
+performance. All
+other components run separately and do not cause any performance impact for
+guest workloads.
+
+%Guest performance with introspection on and off (Use Phoronix test suite to do a bunch of tests here. Current ideas: Apache Run, Apache compile, (other computationally intensive tasks). The idea is guest performance should slow down due to constant introspection but we want to show the slowdown is not enormous.
+
+\noindent
+{\bf Migration Cost.~}
+% 
+Finally, the guest VM is also subject to dynamic migration in the case of a
+policy conflict.  Whenever this situation arises, the latency of migration
+causes a performance hit for the guest.  For our experimental setup, time
+taken to do a single migration hovers around the 20 seconds mark -- however
+this figure is likely to vary wildly depending on network load, utilized RAM
+and volume/disk persistence models (reconnection of volumes to the migrated
+VM takes time).  Although frequent migration of VMs impedes user experience, it is important to note that in most
+policies, migration likely gets triggered only when a security critical
+service launches and the VM relocated is mandated by a policy impacting it. The
+non-cloud alternative of having an entire separate machine dedicated to each
+individual task is most likely much more expensive.
+

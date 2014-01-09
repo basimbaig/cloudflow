@@ -1,0 +1,24 @@
+
+@misc{OpenStack,
+  title = "{Openstack}",
+  howpublished = {Online at \url{http://www.openstack.org/}}
+}
+
+@misc{BellLapadula,
+title = "{Bell-LaPadula model}",
+howpublished = {Online at \url{thttp://en.wikipedia.org/wiki/Bell-LaPadula_model}}
+}
+
+@misc{Biba,
+title = "{Biba model}",
+howpublished = {Online at \url{http://en.wikipedia.org/wiki/Biba_Model}}
+}
+
+@misc{Enron,
+title = "{Enron Case}",
+howpublished = {Online at \url{http://www.fbi.gov/news/stories/2006/december}}
+}
+
+
+@misc{Sox,
+title = "{Sarbanes

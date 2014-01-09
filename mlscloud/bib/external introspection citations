@@ -1,0 +1,20 @@
+external introspection:
+
+Measuring semantic integrity for remote attestation (RemoteAttestation)
+
+“Out-of-the-box” monitoring of vm-
+based high-interaction honeypots (OutOfBox)
+
+Stealthy malware detection
+through vmm-based ”out-of-the-box” semantic view recon-
+struction (OutOfBoxMalware)
+
+Antfarm: tracking processes in a virtual machine
+environment. (AntFarm)
+
+Virtual machine intro-
+spection: Observation or interference? (VMIObserve)
+
+Tamper-resistant, application-
+aware blocking of malicious network connections (TamperResist)
+

@@ -1,0 +1,809 @@
+@INPROCEEDINGS{SemanticGap, 
+author={Chen, P.M. and Noble, B.D.}, 
+booktitle={Hot Topics in Operating Systems, 2001. Proceedings of the Eighth Workshop on}, title={When virtual is better than real [operating system relocation to virtual machines]}, 
+year={2001}, 
+pages={133-138}, 
+keywords={operating systems (computers);virtual machines;environment migration;intrusion detection;intrusion prevention;operating system;secure logging;virtual machine;Application software;Hardware;Large-scale systems;Linux;Operating systems;Security;Software testing;Virtual machine monitors;Virtual machining}, 
+doi={10.1109/HOTOS.2001.990073},}
+
+@incollection{TamperResist,
+year={2008},
+isbn={978-3-540-87402-7},
+booktitle={Recent Advances in Intrusion Detection},
+volume={5230},
+series={Lecture Notes in Computer Science},
+editor={Lippmann, Richard and Kirda, Engin and Trachtenberg, Ari},
+doi={10.1007/978-3-540-87403-4_3},
+title={Tamper-Resistant, Application-Aware Blocking of Malicious Network Connections},
+url={http://dx.doi.org/10.1007/978-3-540-87403-4_3},
+publisher={Springer Berlin Heidelberg},
+keywords={Firewall; virtual machine introspection; attack prevention},
+author={Srivastava, Abhinav and Giffin, Jonathon},
+pages={39-58}
+}
+
+@ARTICLE{VMIObserve, 
+author={Nance, K. and Bishop, M. and Hay, Brian}, 
+journal={Security Privacy, IEEE}, title={Virtual Machine Introspection: Observation or Interference?}, 
+year={2008}, 
+volume={6}, 
+number={5}, 
+pages={32-37}, 
+keywords={system monitoring;virtual machines;Xen VM monitoring system;virtual machine introspection technique;Computerized monitoring;Condition monitoring;Hardware;Interference;Operating systems;Security;Switches;Virtual machine monitors;Virtual machining;Virtual manufacturing;attack analysis;intrusion monitoring;virtual machine introspection;virtual machine monitoring}, 
+doi={10.1109/MSP.2008.134}, 
+ISSN={1540-7993},}
+
+@inproceedings{AntFarm,
+ author = {Jones, Stephen T. and Arpaci-Dusseau, Andrea C. and Arpaci-Dusseau, Remzi H.},
+ title = {Antfarm: tracking processes in a virtual machine environment},
+ booktitle = {Proceedings of the annual conference on USENIX '06 Annual Technical Conference},
+ series = {ATEC '06},
+ year = {2006},
+ location = {Boston, MA},
+ pages = {1--1},
+ numpages = {1},
+ url = {http://dl.acm.org/citation.cfm?id=1267359.1267360},
+ acmid = {1267360},
+ publisher = {USENIX Association},
+ address = {Berkeley, CA, USA},
+} 
+
+
+@inproceedings{OutOfBoxMalware,
+ author = {Jiang, Xuxian and Wang, Xinyuan and Xu, Dongyan},
+ title = {Stealthy malware detection through vmm-based "out-of-the-box" semantic view reconstruction},
+ booktitle = {Proceedings of the 14th ACM conference on Computer and communications security},
+ series = {CCS '07},
+ year = {2007},
+ isbn = {978-1-59593-703-2},
+ location = {Alexandria, Virginia, USA},
+ pages = {128--138},
+ numpages = {11},
+ url = {http://doi.acm.org/10.1145/1315245.1315262},
+ doi = {10.1145/1315245.1315262},
+ acmid = {1315262},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {malware detection, rootkits, virtual machines},
+} 
+
+@incollection{RemoteAttestation,
+year={2009},
+isbn={978-3-642-00586-2},
+booktitle={Trusted Computing},
+volume={5471},
+series={Lecture Notes in Computer Science},
+editor={Chen, Liqun and Mitchell, ChrisJ. and Martin, Andrew},
+doi={10.1007/978-3-642-00587-9_6},
+title={Measuring Semantic Integrity for Remote Attestation},
+url={http://dx.doi.org/10.1007/978-3-642-00587-9_6},
+publisher={Springer Berlin Heidelberg},
+author={Baiardi, Fabrizio and Cilea, Diego and Sgandurra, Daniele and Ceccarelli, Francesco},
+pages={81-100}
+}
+
+@inproceedings{OutOfBox,
+ author = {Jiang, Xuxian and Wang, Xinyuan and Xu, Dongyan},
+ title = {Stealthy malware detection through vmm-based "out-of-the-box" semantic view reconstruction},
+ booktitle = {Proceedings of the 14th ACM conference on Computer and communications security},
+ series = {CCS '07},
+ year = {2007},
+ isbn = {978-1-59593-703-2},
+ location = {Alexandria, Virginia, USA},
+ pages = {128--138},
+ numpages = {11},
+ url = {http://doi.acm.org/10.1145/1315245.1315262},
+ doi = {10.1145/1315245.1315262},
+ acmid = {1315262},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {malware detection, rootkits, virtual machines},
+} 
+
+@misc{OpenStack,
+  title = "{Openstack}",
+  howpublished = {Online at \url{http://www.openstack.org/}}
+}
+
+@misc{AP02,
+  title = "{Auditor saw Enron papers shredded}",
+  howpublished = {Online at \url{http://news.bbc.co.uk/2/hi/business/1986635.stm}}
+}
+
+@misc{Phoronix,
+  title = "{Phoronix Testing Suite}",
+  howpublished = {Online at \url{http://www.phoronix-test-suite.com/}}
+}
+
+
+@misc{BellLapadula,
+title = "{Bell-LaPadula model}",
+howpublished = {Online at \url{thttp://en.wikipedia.org/wiki/Bell-LaPadula_model}}
+}
+
+@misc{Biba,
+title = "{Biba model}",
+howpublished = {Online at \url{http://en.wikipedia.org/wiki/Biba_Model}}
+}
+
+@misc{Enron,
+title = "{Enron Case}",
+howpublished = {Online at \url{http://www.fbi.gov/news/stories/2006/december}}
+}
+
+
+@misc{Sox,
+title = "{Sarbanes-Oxley Act of 2002}",
+howpublished = {Online at \url{http://en.wikipedia.org/wiki/Sarbanes-Oxley_Act}}
+}
+
+@misc{HIPAA,
+title = "{HIPAA, U.S. department of health and social services}",
+howpublished = {Online at \url{http://www.hhs.gov/ocr/privacy/}}
+}
+
+@misc{FISMA,
+title = "{Federal Information Security and Management Act of 2002. Title III of the E-Government Act of 2002}",
+howpublished = {Online at \url{http://www.law.cornell.edu/uscode/text/44/3541}}
+}
+
+@misc{GLB,
+title = "{National Association of Insurance Commissioners. 1999. Graham-Leach-Bliley Act.}",
+howpublished = {Online at \url{http://www.ftc.gov/privacy/glbact/glbsub1.htm}}
+}
+
+@misc{SEC17cfr241,
+title = "{The U.S. Securities and Exchange Commission. 2003. Rule 17a-3\&4, 17 CFR Part 240: Electronic Storage of Broker-Dealer Records}",
+howpublished = {Online at \url{http://www.sec.gov/rules/final/34-44992.htm}}
+}
+
+@misc{FDA21cfr11,
+title = "{The U.S. Department of Health and Human Services Food and Drug Administration. 1997. 21 CFR Part 11: Electronic Records and Signature Regulations}",
+howpublished = {Online at \url{http://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfcfr/cfrsearch.cfm?cfrpart=11}}
+}
+
+@misc{FERPA,
+title = "{The U.S. Department of Education. 1974. 20 U.S.C. 1232g; 34 CFR Part 99: Family Educational Rights and Privacy Act (FERPA)}",
+howpublished = {Online at \url{http://www.ed.gov/policy/gen/guid/fpco/ferpa/index.html}}
+}
+
+@misc{EGA,
+title = "{The E-Government Act 04 2002. U.S. Public Law 107-347}",
+howpublished = {Online at \url{http://www.gpo.gov/fdsys/pkg/PLAW-107publ347/pdf/PLAW-107publ347.pdf}}
+}
+
+@misc{Pat01,
+title = "{The U.S. Patriot Act}",
+howpublished = {Online at \url{http://www.justice.gov/archive/ll/highlights.htm}}
+}
+
+@inproceedings{DKSM,
+ author = {Bahram, Sina and Jiang, Xuxian and Wang, Zhi and Grace, Mike and Li, Jinku and Srinivasan, Deepa and Rhee, Junghwan and Xu, Dongyan},
+ title = {DKSM: Subverting Virtual Machine Introspection for Fun and Profit},
+ booktitle = {Proceedings of the 2010 29th IEEE Symposium on Reliable Distributed Systems},
+ series = {SRDS '10},
+ year = {2010},
+ isbn = {978-0-7695-4250-8},
+ pages = {82--91},
+ numpages = {10},
+ url = {http://dx.doi.org/10.1109/SRDS.2010.39},
+ doi = {10.1109/SRDS.2010.39},
+ acmid = {1916430},
+ publisher = {IEEE Computer Society},
+ address = {Washington, DC, USA},
+ keywords = {Virtualization, Introspection, Direct Kernel Structure Manipulation},
+} 
+
+@inproceedings{NICKLE, 
+author={Junghwan Rhee and Riley, R. and Dongyan Xu and Xuxian Jiang}, 
+booktitle={Availability, Reliability and Security, 2009. ARES '09. International Conference on}, title={Defeating Dynamic Data Kernel Rootkit Attacks via VMM-Based Guest-Transparent Monitoring}, 
+year={2009}, 
+month={march}, 
+volume={}, 
+number={}, 
+pages={74 -81}, 
+keywords={QEMU VMM;VMM-based guest-transparent monitoring;dynamic data kernel rootkit attack;operating system kernel;virtual machine monitor;authorisation;operating system kernels;virtual machines;}, 
+doi={10.1109/ARES.2009.116}, 
+ISSN={}
+}
+
+@inproceedings{SecVisor,
+ author = {Seshadri, Arvind and Luk, Mark and Qu, Ning and Perrig, Adrian},
+ title = {SecVisor: a tiny hypervisor to provide lifetime kernel code integrity for commodity OSes},
+ booktitle = {Proceedings of twenty-first ACM SIGOPS symposium on Operating systems principles},
+ series = {SOSP '07},
+ year = {2007},
+ isbn = {978-1-59593-591-5},
+ location = {Stevenson, Washington, USA},
+ pages = {335--350},
+ numpages = {16},
+ url = {http://doi.acm.org/10.1145/1294261.1294294},
+ doi = {10.1145/1294261.1294294},
+ acmid = {1294294},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {code attestation, code injection attacks, code integrity, hypervisor, memory virtualization, preventing}
+} 
+
+@inproceedings{SideCloud,
+ author = {Ristenpart, Thomas and Tromer, Eran and Shacham, Hovav and Savage, Stefan},
+ title = {Hey, you, get off of my cloud: exploring information leakage in third-party compute clouds},
+ booktitle = {Proceedings of the 16th ACM conference on Computer and communications security},
+ series = {CCS '09},
+ year = {2009},
+ isbn = {978-1-60558-894-0},
+ location = {Chicago, Illinois, USA},
+ pages = {199--212},
+ numpages = {14},
+ url = {http://doi.acm.org/10.1145/1653662.1653687},
+ doi = {10.1145/1653662.1653687},
+ acmid = {1653687},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {cloud computing, side channels, virtual machine security}
+} 
+
+@inproceedings{HookSafe,
+  added-at = {2010-10-27T03:40:25.000+0200},
+  author = {Wang, Zhi and Jiang, Xuxian and Cui, Weidong and Ning, Peng},
+  biburl = {http://www.bibsonomy.org/bibtex/26528ac2b3053f7ca1890f8a9bc66a407/liangzk},
+  booktitle = {CCS09},
+  file = {hooksafe.pdf:ccs\\2009\\hooksafe.pdf:PDF},
+  interhash = {22d62dd4694918195686aa052c322f22},
+  intrahash = {6528ac2b3053f7ca1890f8a9bc66a407},
+  keywords = {rootkit},
+  timestamp = {2010-10-27T03:40:25.000+0200},
+  title = {Countering Kernel Rootkits with Lightweight Hook Protection},
+  year = 2009
+}
+
+@inproceedings{HomeAlone, 
+author={Yinqian Zhang and Juels, A. and Oprea, A. and Reiter, M.K.}, 
+booktitle={Security and Privacy (SP), 2011 IEEE Symposium on}, title={HomeAlone: Co-residency Detection in the Cloud via Side-Channel Analysis}, 
+year={2011}, 
+month={may}, 
+volume={}, 
+number={}, 
+pages={313 -328}, 
+keywords={HomeAlone;L2 memory cache;cache usage;cloud computing;co-residency detection;co-resident foe VM activity detection;defensive detection tool;guest operating system kernel modifications;pervasive virtualization;physical co-residency;side-channel analysis;virtual machines;cache storage;cloud computing;formal verification;operating system kernels;security of data;ubiquitous computing;virtual machines;virtualisation;}, 
+doi={10.1109/SP.2011.31}, 
+ISSN={1081-6011}}
+
+@inproceedings{LibOS,
+ author = {Porter, Donald E. and Boyd-Wickizer, Silas and Howell, Jon and Olinsky, Reuben and Hunt, Galen C.},
+ title = {Rethinking the library OS from the top down},
+ booktitle = {Proceedings of the sixteenth international conference on Architectural support for programming languages and operating systems},
+ series = {ASPLOS '11},
+ year = {2011},
+ isbn = {978-1-4503-0266-1},
+ location = {Newport Beach, California, USA},
+ pages = {291--304},
+ numpages = {14},
+ url = {http://doi.acm.org/10.1145/1950365.1950399},
+ doi = {10.1145/1950365.1950399},
+ acmid = {1950399},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {drawbridge, libos, library os},
+} 
+
+@inproceedings{SETr,
+author = {Denis, J.},
+title = {Setroubleshoot: A user friendly tool to diagnose AVC denials},
+booktitle = {2007 Security Enhanced Linux Symposium},
+url = {http://selinux-symposium.org/2007/papers/09-setroubleshoot.pdf}
+} 
+
+@misc{SeStat,
+title = {The UnOfficial SELinux FAQ},
+howpublished = {Online at \url{http://www.crypt.gen.nz/selinux/faq.html}}
+}
+
+@article{DeDup,
+author = {Danny Harnik and Benny Pinkas and Alexandra Shulman-Peleg},
+title = {Side Channels in Cloud Services: Deduplication in Cloud Storage},
+journal ={IEEE Security and Privacy},
+volume = {8},
+issn = {1540-7993},
+year = {2010},
+pages = {40-47},
+doi = {http://doi.ieeecomputersociety.org/10.1109/MSP.2010.187},
+publisher = {IEEE Computer Society},
+address = {Los Alamitos, CA, USA},
+}
+
+@inproceedings{HyperDistrust,
+ author = {Szefer, Jakub and Lee, Ruby B.},
+ title = {Architectural support for hypervisor-secure virtualization},
+ booktitle = {Proceedings of the seventeenth international conference on Architectural Support for Programming Languages and Operating Systems},
+ series = {ASPLOS '12},
+ year = {2012},
+ isbn = {978-1-4503-0759-8},
+ location = {London, England, UK},
+ pages = {437--450},
+ numpages = {14},
+ url = {http://doi.acm.org/10.1145/2150976.2151022},
+ doi = {10.1145/2150976.2151022},
+ acmid = {2151022},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {attestation, cloud computing, computer architecture, confidentiality, hardware security, hypervisor, integrity, security, trust evidence, virtualization},
+} 
+
+@inproceedings{OSck,
+ author = {Hofmann, Owen S. and Dunn, Alan M. and Kim, Sangman and Roy, Indrajit and Witchel, Emmett},
+ title = {Ensuring operating system kernel integrity with OSck},
+ booktitle = {Proceedings of the sixteenth international conference on Architectural support for programming languages and operating systems},
+ series = {ASPLOS '11},
+ year = {2011},
+ isbn = {978-1-4503-0266-1},
+ location = {Newport Beach, California, USA},
+ pages = {279--290},
+ numpages = {12},
+ url = {http://doi.acm.org/10.1145/1950365.1950398},
+ doi = {10.1145/1950365.1950398},
+ acmid = {1950398},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {rootkit detection},
+} 
+
+@inproceedings{NotJust,
+ author = {Christodorescu, Mihai and Sailer, Reiner and Schales, Douglas Lee and Sgandurra, Daniele and Zamboni, Diego},
+ title = {Cloud security is not (just) virtualization security: a short paper},
+ booktitle = {Proceedings of the 2009 ACM workshop on Cloud computing security},
+ series = {CCSW '09},
+ year = {2009},
+ isbn = {978-1-60558-784-4},
+ location = {Chicago, Illinois, USA},
+ pages = {97--102},
+ numpages = {6},
+ url = {http://doi.acm.org/10.1145/1655008.1655022},
+ doi = {10.1145/1655008.1655022},
+ acmid = {1655022},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {cloud computing, integrity, outsourcing, virtualization},
+} 
+
+@INPROCEEDINGS{VMI_ID,
+    author = {Tal Garfinkel and Mendel Rosenblum},
+    title = {A Virtual Machine Introspection Based Architecture for Intrusion Detection},
+    booktitle = {In Proc. Network and Distributed Systems Security Symposium},
+    year = {2003},
+    pages = {191--206}
+}
+
+@INPROCEEDINGS{XenAccess, 
+author={Payne, B.D. and de Carbone, M.D.P. and Wenke Lee}, 
+booktitle={Computer Security Applications Conference, 2007. ACSAC 2007. Twenty-Third Annual}, title={Secure and Flexible Monitoring of Virtual Machines}, 
+year={2007}, 
+month={dec.}, 
+volume={}, 
+number={}, 
+pages={385 -397}, 
+keywords={flexible monitoring;operating systems;secure monitoring;virtual machines;virtual memory introspection;operating systems (computers);security of data;virtual machines;}, 
+doi={10.1109/ACSAC.2007.10}, 
+ISSN={1063-9527},}
+
+@inproceedings{DistSEL,
+ author = {Lugo, Pedro Chavez and Garcia, Juan Manuel Garcia and Flores, Juan J.},
+ title = {A System for Distributed SELinux Policy Management},
+ booktitle = {Proceedings of the 2009 Third International Conference on Network and System Security},
+ series = {NSS '09},
+ year = {2009},
+ isbn = {978-0-7695-3838-9},
+ pages = {254--261},
+ numpages = {8},
+ url = {http://dx.doi.org/10.1109/NSS.2009.91},
+ doi = {10.1109/NSS.2009.91},
+ acmid = {1684549},
+ publisher = {IEEE Computer Society},
+ address = {Washington, DC, USA},
+ keywords = {Access, control, distributed, administration, SELinux, policies, Kerberos},
+} 
+
+@INPROCEEDINGS{ProcessImplanting, 
+author={Zhongshu Gu and Zhui Deng and Dongyan Xu and Xuxian Jiang}, 
+booktitle={Reliable Distributed Systems (SRDS), 2011 30th IEEE Symposium on}, title={Process Implanting: A New Active Introspection Framework for Virtualization}, 
+year={2011}, 
+month={oct.}, 
+volume={}, 
+number={}, 
+pages={147 -156}, 
+keywords={KVM;active introspection framework;guest operating system;hypervisor;process implanting;security tools;virtual machine introspection;virtualization;operating systems (computers);security of data;virtual machines;virtualisation;}, 
+doi={10.1109/SRDS.2011.26}, 
+ISSN={1060-9857},}
+
+@inproceedings{WindInVM,
+ author = {Sharif, Monirul I. and Lee, Wenke and Cui, Weidong and Lanzi, Andrea},
+ title = {Secure in-VM monitoring using hardware virtualization},
+ booktitle = {Proceedings of the 16th ACM conference on Computer and communications security},
+ series = {CCS '09},
+ year = {2009},
+ isbn = {978-1-60558-894-0},
+ location = {Chicago, Illinois, USA},
+ pages = {477--487},
+ numpages = {11},
+ url = {http://doi.acm.org/10.1145/1653662.1653720},
+ doi = {10.1145/1653662.1653720},
+ acmid = {1653720},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {kernel integrity, malware, secure monitoring, virtual machines},
+} 
+
+@inproceedings{Virtuoso,
+ author = {Dolan-Gavitt, Brendan and Leek, Tim and Zhivich, Michael and Giffin, Jonathon and Lee, Wenke},
+ title = {Virtuoso: Narrowing the Semantic Gap in Virtual Machine Introspection},
+ booktitle = {Proceedings of the 2011 IEEE Symposium on Security and Privacy},
+ series = {SP '11},
+ year = {2011},
+ isbn = {978-0-7695-4402-1},
+ pages = {297--312},
+ numpages = {16},
+ url = {http://dx.doi.org/10.1109/SP.2011.11},
+ doi = {10.1109/SP.2011.11},
+ acmid = {2006772},
+ publisher = {IEEE Computer Society},
+ address = {Washington, DC, USA},
+ keywords = {virtual machine introspection, security, dynamic analysis, virtualization},
+} 
+
+@INPROCEEDINGS{Failure,
+    author = {Peter A. Loscocco and Stephen D. Smalley and Patrick A. Muckelbauer and Ruth C. Taylor and S. Jeff Turner and John F. Farrell},
+    title = {The Inevitability of Failure: The Flawed Assumption of Security in Modern Computing Environments},
+    booktitle = {In Proceedings of the 21st National Information Systems Security Conference},
+    year = {1998},
+    pages = {303--314}
+}
+
+@inproceedings{QEMU,
+ author = {Bellard, Fabrice},
+ title = {QEMU, a fast and portable dynamic translator},
+ booktitle = {Proceedings of the annual conference on USENIX Annual Technical Conference},
+ series = {ATEC '05},
+ year = {2005},
+ location = {Anaheim, CA},
+ pages = {41--41},
+ numpages = {1},
+ url = {http://dl.acm.org/citation.cfm?id=1247360.1247401},
+ acmid = {1247401},
+ publisher = {USENIX Association},
+ address = {Berkeley, CA, USA},
+} 
+
+@inproceedings{L2Channels,
+ author = {Xu, Yunjing and Bailey, Michael and Jahanian, Farnam and Joshi, Kaustubh and Hiltunen, Matti and Schlichting, Richard},
+ title = {An exploration of L2 cache covert channels in virtualized environments},
+ booktitle = {Proceedings of the 3rd ACM workshop on Cloud computing security workshop},
+ series = {CCSW '11},
+ year = {2011},
+ isbn = {978-1-4503-1004-8},
+ location = {Chicago, Illinois, USA},
+ pages = {29--40},
+ numpages = {12},
+ url = {http://doi.acm.org/10.1145/2046660.2046670},
+ doi = {10.1145/2046660.2046670},
+ acmid = {2046670},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {bandwidth, covert channel},
+} 
+
+@inproceedings{HIMA,
+ author = {Azab, Ahmed M. and Ning, Peng and Sezer, Emre C. and Zhang, Xiaolan},
+ title = {HIMA: A Hypervisor-Based Integrity Measurement Agent},
+ booktitle = {Proceedings of the 2009 Annual Computer Security Applications Conference},
+ series = {ACSAC '09},
+ year = {2009},
+ isbn = {978-0-7695-3919-5},
+ pages = {461--470},
+ numpages = {10},
+ url = {http://dx.doi.org/10.1109/ACSAC.2009.50},
+ doi = {10.1109/ACSAC.2009.50},
+ acmid = {1723256},
+ publisher = {IEEE Computer Society},
+ address = {Washington, DC, USA},
+ keywords = {attestation, integrity measurement, systems security},
+} 
+
+@article{SideCrypto,
+ author = {Tromer, Eran and Osvik, Dag Arne and Shamir, Adi},
+ title = {Efficient Cache Attacks on AES, and Countermeasures},
+ journal = {J. Cryptol.},
+ issue_date = {January 2010},
+ volume = {23},
+ number = {2},
+ month = jan,
+ year = {2010},
+ issn = {0933-2790},
+ pages = {37--71},
+ numpages = {35},
+ url = {http://dx.doi.org/10.1007/s00145-009-9049-y},
+ doi = {10.1007/s00145-009-9049-y},
+ acmid = {1713127},
+ publisher = {Springer-Verlag New York, Inc.},
+ address = {Secaucus, NJ, USA},
+ keywords = {AES, Cryptanalysis, Memory cache, Side-channel attack},
+} 
+
+@article{NPT_Overhead,
+author = {AMD},
+title = {AMD-V Nested Paging.},
+journal = {AMD White Paper},
+}
+
+@misc{libvirt,
+author = {libvirt},
+title = {The virtualization API.},
+url = {http://libvirt.org/},
+}
+
+@misc{libvmi,
+author = {libvmi},
+title = {VMI tools},
+url = {https://code.google.com/p/vmitools/},
+}
+
+@inproceedings{MinTCB,
+ author = {Singaravelu, Lenin and Pu, Calton and H\"{a}rtig, Hermann and Helmuth, Christian},
+ title = {Reducing TCB complexity for security-sensitive applications: three case studies},
+ booktitle = {Proceedings of the 1st ACM SIGOPS/EuroSys European Conference on Computer Systems 2006},
+ series = {EuroSys '06},
+ year = {2006},
+ isbn = {1-59593-322-0},
+ location = {Leuven, Belgium},
+ pages = {161--174},
+ numpages = {14},
+ url = {http://doi.acm.org/10.1145/1217935.1217951},
+ doi = {10.1145/1217935.1217951},
+ acmid = {1217951},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {application security, trusted computing base},
+} 
+
+@inproceedings{chen01virtual,
+ author = {Chen, Peter M. and Noble, Brian D.},
+ title = "{When Virtual Is Better Than Real}",
+ booktitle = "{Proceedings of HotOS}",
+ year = {2001}
+} 
+
+@inproceedings{fraser08vici,
+ author = {Fraser, Timothy and Evenson, Matthew R. and Arbaugh, William A.},
+ title = {VICI---Virtual Machine Introspection for Cognitive Immunity},
+ booktitle = {\acsac{}},
+ year = {2008},
+ pages = {87--96},
+} 
+
+@inproceedings{ccs07:petroni-hicks,
+ author = {Petroni,Jr., Nick L. and Hicks, Michael},
+ title = {Automated detection of persistent kernel control-flow attacks},
+ booktitle = {\ccs{}},
+ year = {2007},
+ isbn = {978-1-59593-703-2},
+ pages = {103--115},
+ location = {Alexandria, Virginia, USA},
+ doi = {http://doi.acm.org/10.1145/1315245.1315260},
+ }
+
+@inproceedings{quynh07rootkit,
+ author = {Quynh, Nguyen Anh and Takefuji, Yoshiyasu},
+ title = {Towards a tamper-resistant kernel rootkit detector},
+ booktitle = {\sac{}},
+ year = {2007},
+ pages = {276--283},
+} 
+
+@article{SpaceTraveler,
+author = {Yangchun Fu and Zhiqiang Lin},
+title = {Space Traveling across VM: Automatically Bridging the Semantic Gap in Virtual Machine Introspection via Online Kernel Data Redirection},
+journal ={Security and Privacy, IEEE Symposium on},
+volume = {0},
+issn = {1081-6011},
+year = {2012},
+pages = {586-600},
+doi = {http://doi.ieeecomputersociety.org/10.1109/SP.2012.40},
+publisher = {IEEE Computer Society},
+address = {Los Alamitos, CA, USA},
+}
+
+@inproceedings{HiStar,
+ author = {Zeldovich, Nickolai and Boyd-Wickizer, Silas and Kohler, Eddie and Mazi\`{e}res, David},
+ title = {Making information flow explicit in {H}i{S}tar},
+ booktitle = {Proceedings of the 7th symposium on Operating systems design and implementation},
+ series = {OSDI '06},
+ year = {2006},
+ isbn = {1-931971-47-1},
+ location = {Seattle, Washington},
+ pages = {263--278},
+ numpages = {16},
+ url = {http://dl.acm.org/citation.cfm?id=1298455.1298481},
+ acmid = {1298481},
+ publisher = {USENIX Association},
+ address = {Berkeley, CA, USA},
+} 
+
+@inproceedings{LastSummer, 
+author={Weinberg, Z. and Chen, E.Y. and Jayaraman, P.R. and Jackson, C.}, 
+booktitle={Security and Privacy (SP), 2011 IEEE Symposium on}, title={I Still Know What You Visited Last Summer: Leaking Browsing History via User Interaction and Side Channel Attacks}, 
+year={2011}, 
+pages={147-161}, 
+keywords={Web sites;online front-ends;security of data;Web sites;history browsing;history sniffing attacks;interactive techniques;side channel attacks;Browsers;Cascading style sheets;Color;History;Probes;Security;Servers;browsing history;privacy;web security}, 
+doi={10.1109/SP.2011.23}, 
+ISSN={1081-6011},}
+
+@inproceedings{ScriptlessAttacks,
+ author = {Heiderich, Mario and Niemietz, Marcus and Schuster, Felix and Holz, Thorsten and Schwenk, J\"{o}rg},
+ title = {Scriptless attacks: stealing the pie without touching the sill},
+ booktitle = {Proceedings of the 2012 ACM conference on Computer and communications security},
+ series = {CCS '12},
+ year = {2012},
+ isbn = {978-1-4503-1651-4},
+ location = {Raleigh, North Carolina, USA},
+ pages = {760--771},
+ numpages = {12},
+ url = {http://doi.acm.org/10.1145/2382196.2382276},
+ doi = {10.1145/2382196.2382276},
+ acmid = {2382276},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {attack fonts, css, html5, scriptless attacks, svg, xss},
+} 
+
+@inproceedings{Terra,
+ author = {Garfinkel, Tal and Pfaff, Ben and Chow, Jim and Rosenblum, Mendel and Boneh, Dan},
+ title = {Terra: a virtual machine-based platform for trusted computing},
+ booktitle = {Proceedings of the nineteenth ACM symposium on Operating systems principles},
+ series = {SOSP '03},
+ year = {2003},
+ isbn = {1-58113-757-5},
+ location = {Bolton Landing, NY, USA},
+ pages = {193--206},
+ numpages = {14},
+ url = {http://doi.acm.org/10.1145/945445.945464},
+ doi = {10.1145/945445.945464},
+ acmid = {945464},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {VMM, attestation, authentication, trusted computing, virtual machine, virtual machine monitor},
+} 
+
+@inproceedings{CoPilot,
+ author = {Petroni,Jr., Nick L. and Fraser, Timothy and Molina, Jesus and Arbaugh, William A.},
+ title = {Copilot - a coprocessor-based kernel runtime integrity monitor},
+ booktitle = {Proceedings of the 13th conference on USENIX Security Symposium - Volume 13},
+ series = {SSYM'04},
+ year = {2004},
+ location = {San Diego, CA},
+ pages = {13--13},
+ numpages = {1},
+ url = {http://dl.acm.org/citation.cfm?id=1251375.1251388},
+ acmid = {1251388},
+ publisher = {USENIX Association},
+ address = {Berkeley, CA, USA},
+} 
+
+@inproceedings{Ether,
+ author = {Dinaburg, Artem and Royal, Paul and Sharif, Monirul and Lee, Wenke},
+ title = {Ether: malware analysis via hardware virtualization extensions},
+ booktitle = {Proceedings of the 15th ACM conference on Computer and communications security},
+ series = {CCS '08},
+ year = {2008},
+ isbn = {978-1-59593-810-7},
+ location = {Alexandria, Virginia, USA},
+ pages = {51--62},
+ numpages = {12},
+ url = {http://doi.acm.org/10.1145/1455770.1455779},
+ doi = {10.1145/1455770.1455779},
+ acmid = {1455779},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {dynamic analysis, emulation, malware analysis, unpacking, virtualization},
+} 
+
+@inproceedings{Mushi, 
+author={Ning Zhang and Ming Li and Wenjing Lou and Hou, Y.T.}, 
+booktitle={MILITARY COMMUNICATIONS CONFERENCE, 2012 - MILCOM 2012}, title={MUSHI: Toward Multiple Level Security cloud with strong Hardware level Isolation}, 
+year={2012}, 
+pages={1-6}, 
+keywords={cloud computing;data privacy;information systems;military computing;trusted computing;virtual machines;MUSHI;cloud infrastructure;cloud service provider;complex information system;computer;confidentiality;hardware level isolation;intelligence system;malicious attack;military;multiple level security cloud;virtual machine execution;virtualization technology;Hardware;Kernel;Security;Servers;Virtual machine monitors;Virtual machining;Virtualization}, 
+doi={10.1109/MILCOM.2012.6415698}, 
+ISSN={2155-7578},}
+
+@inproceedings{Nova,
+ author = {Steinberg, Udo and Kauer, Bernhard},
+ title = {NOVA: a microhypervisor-based secure virtualization architecture},
+ booktitle = {Proceedings of the 5th European conference on Computer systems},
+ series = {EuroSys '10},
+ year = {2010},
+ isbn = {978-1-60558-577-2},
+ location = {Paris, France},
+ pages = {209--222},
+ numpages = {14},
+ url = {http://doi.acm.org/10.1145/1755913.1755935},
+ doi = {10.1145/1755913.1755935},
+ acmid = {1755935},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {architecture, virtualization},
+} 
+
+@inproceedings{PrimeProbe12,
+ author = {Zhang, Yinqian and Juels, Ari and Reiter, Michael K. and Ristenpart, Thomas},
+ title = {Cross-VM side channels and their use to extract private keys},
+ booktitle = {Proceedings of the 2012 ACM conference on Computer and communications security},
+ series = {CCS '12},
+ year = {2012},
+ isbn = {978-1-4503-1651-4},
+ location = {Raleigh, North Carolina, USA},
+ pages = {305--316},
+ numpages = {12},
+ url = {http://doi.acm.org/10.1145/2382196.2382230},
+ doi = {10.1145/2382196.2382230},
+ acmid = {2382230},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {cache-based side channel, cross-vm side channel, side-channel attack},
+} 
+
+@INPROCEEDINGS{CloudEncPolicy10, 
+author={De Capitani di Vimercati, S. and Foresti, S. and Jajodia, S. and Paraboschi, S. and Pelosi, G. and Samarati, P.}, 
+booktitle={Distributed Computing Systems Workshops (ICDCSW), 2010 IEEE 30th International Conference on}, title={Encryption-Based Policy Enforcement for Cloud Storage}, 
+year={2010}, 
+pages={42-51}, 
+keywords={Internet;authorisation;cryptography;storage management;Internet companies;access control policy;cloud storage;encryption-based policy enforcement;Authorization;Catalogs;Cloud computing;Clouds;Encryption}, 
+doi={10.1109/ICDCSW.2010.35}, 
+ISSN={1545-0678},}
+
+@INPROCEEDINGS{NetODESSA, 
+author={Bellessa, J. and Kroske, E. and Farivar, R. and Montanari, M. and Larson, K. and Campbell, R.H.}, 
+booktitle={Reliable Distributed Systems Workshops (SRDSW), 2011 30th IEEE Symposium on}, title={NetODESSA: Dynamic Policy Enforcement in Cloud Networks}, 
+year={2011}, 
+pages={57-61}, 
+keywords={cloud computing;inference mechanisms;NetODESSA;cloud computing systems;cloud networks;dynamic policy enforcement;inference based system;network configuration;Control systems;Engines;Monitoring;Ontologies;Prototypes;Resource description framework;Security}, 
+doi={10.1109/SRDSW.2011.24},}
+
+@INPROCEEDINGS{CloudProfit12, 
+author={Patel, Komal Singh and Sarje, A.K.}, 
+booktitle={Computing Communication Networking Technologies (ICCCNT), 2012 Third International Conference on}, title={VM provisioning policies to improve the profit of cloud infrastructure service providers}, 
+year={2012}, 
+pages={1-5}, 
+keywords={cloud computing;operating systems (computers);optimisation;outsourcing;resource allocation;scheduling;virtual machines;CloudSim;IT world;VM provisioning policy optimization;cloud computing;cloud infrastructure service providers;cloud provider resources;federated cloud environment;large-scale industries;operating systems;resource allocation;scheduling;small business;virtual machine;Contracts;Media;Monitoring;Outsourcing;Resource management;Robustness;Cloud computing;Cloud provider;federation;outsourcing;profit}, 
+doi={10.1109/ICCCNT.2012.6395956},}
+
+@INPROCEEDINGS{CloudPower12, 
+author={Wei Chen and Fengqian Gao and Yuan Lu}, 
+booktitle={Enterprise Distributed Object Computing Conference Workshops (EDOCW), 2012 IEEE 16th International}, title={Policy Based Power Management in Cloud Environment with Intel Intelligent Power Node Manager}, 
+year={2012}, 
+pages={66-69}, 
+keywords={cloud computing;power aware computing;public domain software;Intel intelligent power node manager;OSPC;Prime95;cloud computing;live migration;open source private cloud solution;platform resident technology;policy based power management;power load;power policies;private cloud environment management;thermal policies;Cloud computing;Computer architecture;Green products;Power demand;Servers;Virtual machining;Cloud Computing;Live Migration;Open Stack;Power Management}, 
+doi={10.1109/EDOCW.2012.18},}
+
+@INPROCEEDINGS{AllocationPolicy10, 
+author={Fei Teng and Magoulès, F.}, 
+booktitle={Computer and Information Technology (CIT), 2010 IEEE 10th International Conference on}, title={Resource Pricing and Equilibrium Allocation Policy in Cloud Computing}, 
+year={2010}, 
+pages={195-202}, 
+keywords={Internet;game theory;grid computing;resource allocation;scheduling;Nash equilibrium allocation proportion;cloud computing;competition analysis;computing paradigm;equilibrium allocation policy;global distributed cloud environment;grid computing;job decomposition;job scheduling;resource allocation policy;resource management problem;resource pricing;resource virtualization;Cloud computing;Clouds;Equations;Games;Mathematical model;Pricing;Resource management;Nash equilibrium;cloud computing;dynamic games;resource allocation;resource pricing}, 
+doi={10.1109/CIT.2010.70},}
+
+@inproceedings{ultra-fast,
+ author = {Heintze, Nevin and Tardieu, Olivier},
+ title = {Ultra-fast aliasing analysis using CLA: a million lines of C code in a second},
+ booktitle = {Proceedings of the ACM SIGPLAN 2001 conference on Programming language design and implementation},
+ series = {PLDI '01},
+ year = {2001},
+ isbn = {1-58113-414-2},
+ location = {Snowbird, Utah, USA},
+ pages = {254--263},
+ numpages = {10},
+ url = {http://doi.acm.org/10.1145/378795.378855},
+ doi = {10.1145/378795.378855},
+ acmid = {378855},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+}

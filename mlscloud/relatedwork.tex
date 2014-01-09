@@ -1,0 +1,69 @@
+\section{Related Work}
+\label{sec:relatedwork}
+\paragraph{\bf Cloud Policy Enforcement}
+
+The main focus of this paper is to provide information flow control at
+cloud-level via policy enforcement.  There has been previous work in the
+field of cloud wide policy enforcement but it is geared towards improving
+performance rather than providing better security.  Policies are usually
+defined in order to attain better segregation amongst nodes of different
+computational and storage needs and provide better load balancing or
+scheduling algorithms.  Work that most closely resembles this paper includes
+stronger virtual machine isolation mechanisms \cite{Mushi}.  Such mechanisms
+do not implement any policy mechanism and rather provide rudimentary MLS via
+hardwired isolation.
+
+\paragraph{\bf MLS}
+
+MLS enforcement is an extensively studied field at the scope of an end host.
+SELinux \cite{SeStat} is an established platform for providing MLS within
+the operating system.  It was originally developed by the NSA but since then
+it has been merged into the mainline Linux kernel due to widespread
+adoption.  In this paper we have used the typing mechanisms provided by
+SELinux for the purpose of labeling processes and users to generate runtime
+labels.  However SELinux is not limited to this use and indeed it has been
+used in a multitude of projects within the security world.  In addition to
+this, works like HiStar \cite{HiStar} aim to provide a fully functioning
+operating system with information flow monitoring.  This is a perfectly
+viable approach but it places the burden of security on the developers
+because existing applications need to be re-engineered from the ground up
+and extensive changes are required to the existing hardware.  In our private
+cloud scenario, we want to minimize the work needed to upgrade the existing
+infrastructure which includes software, hardware and personnel.
+
+\paragraph{\bf Side channel attacks}
+
+Information leakage via side channels has been a well known issue for years.
+Side channel attacks have been developed for a variety of systems and
+communication channels and exploit timing information, electromagnetic leaks
+and even power consumption.  However, in this paper we have narrowed our
+scope to hardware side channels.  Generally speaking, side channel attacks
+have been mounted in several scenarios to extract sensitive information. 
+This includes cryptographic keys \cite{SideCrypto,SideCloud,PrimeProbe12} in the context
+of operating systems as well as sensitive information on the web
+\cite{LastSummer,ScriptlessAttacks}.  In the scope of cross-VM side channels
+attacks, previous work \cite{HomeAlone} has been done to thwart cache based
+attacks.  This is a perfectly viable approach but it remains powerless
+against new attack vectors.  CloudFlow is driven by the philosophy that
+hardware side-channels are arguably impossible to eliminate and thus the
+best defense is preventive rather than curative.
+
+\paragraph{\bf Virtual machine introspection}
+
+Virtual machine introspection was first suggested by Garfield and Rosenblum
+\cite{Terra}.  There are usually two types of introspection mechanisms,
+those requiring changes to the guest virtual machine or target applications
+and those that work at the hypervisor level.  In this paper we have opted
+for the later approach to ensure minimum hassle in terms of changes needed
+to existing operating system infrastructure.  External introspection is
+extremely popular and has been used by a multitude of researchers
+\cite{RemoteAttestation,OutOfBox,OutOfBoxMalware,AntFarm,VMIObserve,TamperResist,libvmi}. 
+Previous introspection mechanisms have been aimed towards solving a myriad
+of problems such as intrusion detection \cite{CoPilot}, malware analysis
+\cite{Ether} and forensics.  However external introspection approaches are
+inherently at a disadvantage due to having an outsider view and remain prone
+to the \textit{semantic gap} problem \cite{SemanticGap}.
+
+In recent years there has been much effort to reduce this so called semantic gap and provide detailed information even for adversarial virtual machines \cite{Virtuoso,ProcessImplanting}. This has led to construction of hybrid approaches that install an agent inside the monitored guest as well to provide a view that is richer in semantics and provides a detailed picture of the guest.
+
+%we need to cite homealone here and in the intro as well
